@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: .
+    container_name: spotify-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    environment:
+      JUPYTER_TOKEN: spotify_token
+    restart: unless-stopped
